@@ -4,7 +4,7 @@ import { TextField } from '@mui/material';
 import './App.css';
 
 async function joinProjectBackend(param){
-    const url = 'http://127.0.0.1:5000///joinProject/'+ param;
+    const url = '/joinProject/'+ param;
     const response = await fetch(url);
     const data = await response.text();
     alert('Joined ' + data)
@@ -12,7 +12,7 @@ async function joinProjectBackend(param){
 }
 
 async function leaveProjectBackend(param){
-    const url = 'http://127.0.0.1:5000///leaveProject/'+ param;
+    const url = '/leaveProject/'+ param;
     const response = await fetch(url);
     const data = await response.text();
     alert('Left ' + data)
@@ -20,7 +20,7 @@ async function leaveProjectBackend(param){
 }
 
 async function checkInHardware(id, qty){
-    const url = 'http://127.0.0.1:5000///checkIn/'+ id + '/' + qty;
+    const url = '/checkIn/'+ id + '/' + qty;
     const response = await fetch(url);
     const data = await response.json();
     const name = data.name;
@@ -29,7 +29,7 @@ async function checkInHardware(id, qty){
 }
 
 async function checkOutHardware(id, qty){
-    const url = 'http://127.0.0.1:5000///checkOut/'+ id + '/' + qty;
+    const url = '/checkOut/'+ id + '/' + qty;
     const response = await fetch(url);
     const data = await response.json();
     const name = data.name;
