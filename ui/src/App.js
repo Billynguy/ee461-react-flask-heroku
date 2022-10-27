@@ -109,6 +109,7 @@ class Entry extends React.Component{
                 <div className = "PName">
                     <h1>{this.props.value}</h1>
                     <h2>Users: Billy, Daniel, Bob </h2>
+                    {this.renderJoinButton()} 
                 </div>
                 <div className="Set1">
                     <b id = "b">HWSet1: 75/100</b>                    
@@ -124,7 +125,6 @@ class Entry extends React.Component{
                     {this.renderGenButton('Check In', 'Set2')}
                     {this.renderGenButton('Check Out', 'Set2')}                   
                 </div>
-                {this.renderJoinButton()} 
             </div>
         );
     }
@@ -134,7 +134,7 @@ class Projects extends React.Component {
     render() {
         return (
             <div className="Projects">
-                <h2>Projects</h2>
+                <h1>Projects Page</h1>
                 <div className="Entrys">
                     <Entry value = {'Project 1'}/>
                     <Entry value = {'Project 2'}/>
