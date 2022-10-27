@@ -1,7 +1,6 @@
 import React from 'react';
 import Button from '@mui/material/Button';
 import { TextField } from '@mui/material';
-import './App.css';
 
 async function joinProjectBackend(param){
     const url = '/joinProject/'+ param;
@@ -95,13 +94,11 @@ class Entry extends React.Component{
         return <GenButton id = {set} value = {name} onClick = {() => this.handleGenClick(name, set)}/>;
     }
     handleSet1Change(param){
-        //console.log(param);
         this.setState({
             set1Val: param
         });
     }
     handleSet2Change(param){
-        //console.log(param);
         this.setState({
             set2Val: param
         });
@@ -111,21 +108,23 @@ class Entry extends React.Component{
             <div className = "Project">
                 <div className = "PName">
                     <h1>{this.props.value}</h1>
-                    <h2>Users: Umar, John </h2>
+                    <h2>Users: Billy, Daniel, Bob </h2>
                 </div>
                 <div className="Set1">
-                    <b id = "b">HWSet1: 50/100</b>                    
-                    <TextField id="outlinedset1" label="Enter Qty" variant="outlined" onChange = {(event) => this.handleSet1Change(event.target.value)}/>
+                    <b id = "b">HWSet1: 75/100</b>                    
+                    <TextField id="outlinedset1" label="Enter Qty" variant="outlined" 
+                        onChange = {(event) => this.handleSet1Change(event.target.value)}/>
                     {this.renderGenButton('Check In', 'Set1')}
-                    {this.renderGenButton('Check Out', 'Set1')}
-                    {this.renderJoinButton()}                   
+                    {this.renderGenButton('Check Out', 'Set1')}                  
                 </div>
                 <div className="Set2">      
-                    <b id = "b">HWSet2: 0/100</b>
-                    <TextField id="outlinedset2" label="Enter Qty" variant="outlined" onChange = {(event) => this.handleSet2Change(event.target.value)}/>
+                    <b id = "b">HWSet2: 25/100</b>
+                    <TextField id="outlinedset2" label="Enter Qty" variant="outlined" 
+                        onChange = {(event) => this.handleSet2Change(event.target.value)}/>
                     {this.renderGenButton('Check In', 'Set2')}
                     {this.renderGenButton('Check Out', 'Set2')}                   
                 </div>
+                {this.renderJoinButton()} 
             </div>
         );
     }
@@ -139,7 +138,6 @@ class Projects extends React.Component {
                 <div className="Entrys">
                     <Entry value = {'Project 1'}/>
                     <Entry value = {'Project 2'}/>
-                    <Entry value = {'Project 3'}/>
                 </div>
 
             </div>
